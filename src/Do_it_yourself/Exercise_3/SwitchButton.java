@@ -3,6 +3,8 @@ package Do_it_yourself.Exercise_3;
 import Step_by_step.Exercise_2.Battery;
 import Step_by_step.Exercise_2.FlashLamp;
 
+import java.util.Scanner;
+
 public class SwitchButton {
     private boolean status;
     private ElectricLamp lamp;
@@ -39,20 +41,30 @@ public class SwitchButton {
     public static void main(String[] args) {
         SwitchButton testSwitchButton = new SwitchButton();
         ElectricLamp testElectricLamp = new ElectricLamp();
-
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Connect the SwitchButton object to the ElectricLamp");
         System.out.println("Please Wait 2s...\n");
         testSwitchButton.connectToLamp(testElectricLamp);
         SwitchButton.timeWait();
 
-        testSwitchButton.switchOn();
-        System.out.println("ElectricLamp ON and wait 10s");
-        for (int i = 0; i <10; i++){
-            FlashLamp.timeWait();
-            System.out.println(i+1);
+        while (true){
+            System.out.println("Turn ON ElectricLamp Yes OR NO:  y/n");
+            String choice = scanner.nextLine();
+            if (choice.equals("y")){
+                testSwitchButton.switchOn();
+                System.out.println("ElectricLamp ON and wait 10s");
+                for (int i = 0; i <10; i++){
+                    FlashLamp.timeWait();
+                    System.out.println(i+1);
+                }
+                testSwitchButton.switchOff();
+                System.out.println("ElectricLamp OFF");
+            } else if (choice.equals("n")){
+                System.out.println("ElectricLamp FINNISH");
+                break;
+            }
+
         }
-        testSwitchButton.switchOff();
-        System.out.println("ElectricLamp OFF");
 
     }
 

@@ -1,4 +1,6 @@
-package entity;
+package Step_by_step.Exercise_1;
+
+import Step_by_step.Exercise_1.Student;
 
 public class Client {
     public static void main(String[] args) {

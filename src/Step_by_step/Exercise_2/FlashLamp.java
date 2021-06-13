@@ -1,4 +1,4 @@
-package entity;
+package Step_by_step.Exercise_2;
 
 import java.util.Scanner;
 
@@ -67,16 +67,15 @@ public class FlashLamp {
                         break;
                     }
                     else {
-                        System.out.println("LIGHT ON");
+                        System.out.println("LIGHT ON and wait 10s");
                         testFlashLamp.turnOn();
-                        FlashLamp.timeWait();
                         System.out.println("Energy Battery = " + testFlashLamp.getBatteryInfo());
-                        System.out.println("Light OFF and wait 10s");
                         for (int i = 0; i <10; i++){
-                            testFlashLamp.turnOff();
                             FlashLamp.timeWait();
                             System.out.println(i+1);
                         }
+                        testFlashLamp.turnOff();
+                        System.out.println("Light OFF");
                     }
                 }
                 else if (check.equals("n")){

@@ -1,4 +1,4 @@
-package entity;
+package Step_by_step.Exercise_1;
 
 public class Student {
     /**

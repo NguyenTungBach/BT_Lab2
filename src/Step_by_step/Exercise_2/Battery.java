@@ -1,4 +1,4 @@
-package entity;
+package Step_by_step.Exercise_2;
 
 public class Battery {
     private int energy;
